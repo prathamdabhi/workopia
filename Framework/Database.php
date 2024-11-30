@@ -1,5 +1,11 @@
 <?php
 
+namespace Framework;
+
+use PDO;
+use PDOException;
+use Exception;
+
 class Database
 {
     public $conn;
@@ -13,7 +19,7 @@ class Database
 
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            pdo::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ];
 
         try {

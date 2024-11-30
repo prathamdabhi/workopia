@@ -1,0 +1,13 @@
+{
+    "name": "prathamdabhi/workopia",
+    "description": "Job Listing Application",
+    "authors": [
+        { "name":"Pratham", "email": "pratham@gmail.com"}
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\":"Framework/",
+            "App\\":"App/"
+        }
+    }
+}
