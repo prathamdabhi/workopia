@@ -30,10 +30,11 @@ function loadView($name, $data = [])
  * load partial function
  * @param String $name
  */
-function loadpartial($name)
+function loadpartial($name, $data = [])
 {
     $partialPatch =  getPatch("App/views/partials/$name.php");
     if (file_exists($partialPatch)) {
+        extract($data);
         require $partialPatch;
     } else {
         echo " partial $name is not found";
@@ -73,4 +74,27 @@ function inspectAndDie($value)
 function formatSalary($salary)
 {
     return '$' . number_format(floatval($salary));
+}
+
+/**
+ * Sanitize function
+ * @param String $data
+ * @return String
+ */
+
+function sanitize($data)
+{
+    return filter_var(trim($data), FILTER_SANITIZE_SPECIAL_CHARS);
+}
+
+/**
+ * redirect function
+ *
+ * @param String $path
+ * @return void
+ */
+function redirect($path)
+{
+    header("Location: {$path}");
+    exit;
 }

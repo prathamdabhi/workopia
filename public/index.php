@@ -1,8 +1,14 @@
 <?php
+session_start();
 require __DIR__ . '/../vendor/autoload.php';
-require '../helper.php';
 
 use Framework\Router;
+use Framework\Session;
+
+Session::start();
+
+
+require '../helper.php';
 
 
 // require getPatch('Framework/Router.php');
